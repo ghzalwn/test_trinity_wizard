@@ -5,6 +5,11 @@ class TabbarContent {
   String? title;
   Widget? screenContent;
   bool? showFloatingButton;
-  TabbarContent(
-      {this.title, this.screenContent, this.showFloatingButton = false});
+  bool? isProfile;
+  TabbarContent({
+    this.title,
+    this.screenContent,
+    this.showFloatingButton = false,
+    this.isProfile = false,
+  });
 }

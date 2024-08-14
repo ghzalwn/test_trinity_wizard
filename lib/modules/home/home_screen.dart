@@ -18,13 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<TabbarContent> _listTabbarContent = [
     TabbarContent(
-        title: 'My Contacts',
-        screenContent: MyContactScreen(),
-        showFloatingButton: true),
-    TabbarContent(title: 'My Profile', screenContent: MyProfileScreen())
+      title: 'My Contacts',
+      screenContent: MyContactScreen(),
+      showFloatingButton: true,
+    ),
+    TabbarContent(
+        title: 'My Profile', screenContent: MyProfileScreen(), isProfile: true)
   ];
-
-  final List<Widget> _pages = [MyContactScreen(), MyProfileScreen()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -40,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: CustomAppBar(
           titleBar: _listTabbarContent[_selectedIndex].title ?? '-',
           showButtonBack: false,
+          isProfile: _listTabbarContent[_selectedIndex].isProfile ?? false,
         ),
       ),
       body: _listTabbarContent[_selectedIndex].screenContent,

@@ -233,4 +233,19 @@ class AppController extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> logout() async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+    try {
+      final pref = await SharedPreferences.getInstance();
+      pref.clear();
+    } catch (e) {
+      _errorMessage = 'Error: $e';
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
 }
