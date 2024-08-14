@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
         decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: AppColors.grey,
+              color: AppColors.lightGray,
               blurRadius: 10,
               spreadRadius: -2,
               blurStyle: BlurStyle.outer,
