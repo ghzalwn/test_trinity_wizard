@@ -53,13 +53,13 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
           colorScheme: const ColorScheme.light(
-              primary: Colors.white, secondary: AppColors.primary),
+              primary: Colors.white, secondary: AppColors.blue),
           textSelectionTheme: TextSelectionThemeData(
-            cursorColor: AppColors.primary, // Set the cursor color
+            cursorColor: AppColors.blue, // Set the cursor color
             selectionColor:
                 Colors.blue.withOpacity(0.4), // Set the selection color
             selectionHandleColor:
-                AppColors.primary, // Set the selection handle color
+                AppColors.blue, // Set the selection handle color
           ),
         ),
         onGenerateRoute: AppRoutes.onGenerateRoute,
