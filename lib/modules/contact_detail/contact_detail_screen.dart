@@ -1,14 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:test_trinity_wizard/controller/app_controller.dart';
 import 'package:test_trinity_wizard/models/user.dart';
 import 'package:test_trinity_wizard/utils/app_colors.dart';
-import 'package:test_trinity_wizard/utils/app_icons.dart';
 import 'package:test_trinity_wizard/widgets/avatar_with_initial.dart';
 import 'package:test_trinity_wizard/widgets/custom_app_bar.dart';
 import 'package:uuid/uuid.dart';
@@ -40,14 +36,13 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
       builder: (BuildContext context, Widget? child) {
         return Theme(
           data: ThemeData.light().copyWith(
-            hintColor: Colors.blue, // Selected date color
-            colorScheme: ColorScheme.light(primary: AppColors.blue),
-            dialogBackgroundColor:
-                Colors.white, // Background color of the dialog
+            hintColor: Colors.blue,
+            colorScheme: const ColorScheme.light(primary: AppColors.blue),
+            dialogBackgroundColor: Colors.white,
             datePickerTheme: DatePickerThemeData(
               backgroundColor: Colors.white,
-              dayStyle: TextStyle(color: Colors.black), // Day text color
-              dividerColor: Colors.blueAccent, // Divider color
+              dayStyle: const TextStyle(color: Colors.black),
+              dividerColor: Colors.blueAccent,
               confirmButtonStyle: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all<Color>(AppColors.blue),
                 foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
@@ -98,7 +93,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
   String? _validateEmail(String? value) {
     final emailPattern = RegExp(r'^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
     if (value == null || value.isEmpty) {
-      return null; // Email is optional
+      return null;
     } else if (!emailPattern.hasMatch(value)) {
       return 'Enter a valid email address';
     }
@@ -107,7 +102,6 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _firstName.dispose();
     _lastName.dispose();
@@ -251,7 +245,8 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
                             color: AppColors.red,
-                            textStyle: TextStyle(fontStyle: FontStyle.italic),
+                            textStyle:
+                                const TextStyle(fontStyle: FontStyle.italic),
                           ),
                         ),
                       ],
@@ -297,7 +292,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -308,7 +303,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                       color: AppColors.blue,
-                      textStyle: TextStyle(fontStyle: FontStyle.italic),
+                      textStyle: const TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),
                 ),
@@ -428,14 +423,14 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                       padding: const EdgeInsets.symmetric(horizontal: 2.0),
                       child: Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.calendar_month_outlined,
                             color: AppColors.blue,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -507,7 +502,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Text(
                         isEdit ? 'Update' : 'Save',
                         style: GoogleFonts.poppins(
@@ -519,7 +514,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
@@ -552,7 +547,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: Text(
                           'Remove',
                           style: GoogleFonts.poppins(

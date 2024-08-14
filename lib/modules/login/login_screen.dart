@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:test_trinity_wizard/controller/app_controller.dart';
@@ -57,14 +54,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppColors.darkGray, // border color
+                    color: AppColors.blue,
+                    width: 0.5,
                   ),
                 ),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 6.0),
                   child: TextFormField(
                     controller: _userId,
-                    cursorColor: AppColors.blue, // set the cursor color here
+                    cursorColor: AppColors.blue,
                     decoration: InputDecoration(
                       prefixIcon: SizedBox(
                         height: 10,
@@ -79,8 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: AppColors.darkGray,
                         fontWeight: FontWeight.w400,
                       ),
-                      border: InputBorder.none, // hide the default border
-                      contentPadding: EdgeInsets.symmetric(
+                      border: InputBorder.none,
+                      contentPadding: const EdgeInsets.symmetric(
                         vertical: 15.0,
                       ), // Adjust this as needed
                     ),
@@ -96,6 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     appController.loadUserById(_userId.text).whenComplete(() {
                       if (appController.user != null) {
+                        // ignore: use_build_context_synchronously
                         Navigator.pushNamed(context, AppRoutes.homeScreen);
                       }
                     });
@@ -109,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Text(
                       'Login',
                       style: GoogleFonts.poppins(

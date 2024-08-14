@@ -1,17 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:test_trinity_wizard/controller/app_controller.dart';
-import 'package:test_trinity_wizard/data/list_user.dart';
-import 'package:test_trinity_wizard/models/user.dart';
 import 'package:test_trinity_wizard/routes/app_routes.dart';
 import 'package:test_trinity_wizard/utils/app_colors.dart';
 import 'package:test_trinity_wizard/utils/app_icons.dart';
-import 'package:test_trinity_wizard/utils/utils.dart';
-import 'package:test_trinity_wizard/widgets/avatar_with_initial.dart';
 import 'package:test_trinity_wizard/widgets/item_contact.dart';
 
 class MyContactScreen extends StatefulWidget {
@@ -22,7 +16,6 @@ class MyContactScreen extends StatefulWidget {
 }
 
 class _MyContactScreenState extends State<MyContactScreen> {
-  final _formKey = GlobalKey<FormState>();
   final TextEditingController _keyword = TextEditingController();
 
   late AppController appController;

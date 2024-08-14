@@ -1,11 +1,8 @@
 import 'dart:convert';
-import 'dart:developer';
-import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_trinity_wizard/models/user.dart';
-import 'package:test_trinity_wizard/utils/utils.dart';
 
 class ApiService {
   Future<List<User>> getAllContacts() async {

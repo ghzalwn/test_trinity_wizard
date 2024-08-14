@@ -52,7 +52,7 @@ class ItemContact extends StatelessWidget {
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                       color: AppColors.darkGray,
-                      textStyle: TextStyle(fontStyle: FontStyle.italic),
+                      textStyle: const TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ),
                 ],

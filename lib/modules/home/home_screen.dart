@@ -19,11 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<TabbarContent> _listTabbarContent = [
     TabbarContent(
       title: 'My Contacts',
-      screenContent: MyContactScreen(),
+      screenContent: const MyContactScreen(),
       showFloatingButton: true,
     ),
     TabbarContent(
-        title: 'My Profile', screenContent: MyProfileScreen(), isProfile: true)
+        title: 'My Profile',
+        screenContent: const MyProfileScreen(),
+        isProfile: true)
   ];
 
   void _onItemTapped(int index) {

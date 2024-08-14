@@ -1,14 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:test_trinity_wizard/controller/app_controller.dart';
 import 'package:test_trinity_wizard/routes/app_routes.dart';
-import 'package:test_trinity_wizard/utils/app_colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:test_trinity_wizard/utils/app_icons.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -46,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: CircularProgressIndicator(),
       ),
