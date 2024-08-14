@@ -208,8 +208,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
 
                         return null;
                       },
-                      cursorColor:
-                          AppColors.primary, // set the cursor color here
+                      cursorColor: AppColors.blue, // set the cursor color here
                       decoration: InputDecoration(
                         prefixIcon: const Icon(
                           Icons.person_outline,
@@ -278,8 +277,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
 
                         return null;
                       },
-                      cursorColor:
-                          AppColors.primary, // set the cursor color here
+                      cursorColor: AppColors.blue, // set the cursor color here
                       decoration: InputDecoration(
                         prefixIcon: const Icon(
                           Icons.person_outline,
@@ -361,8 +359,7 @@ class ContactDetailScrenState extends State<ContactDetailScren> {
                       textInputAction: TextInputAction.next,
                       controller: _email,
                       validator: _validateEmail,
-                      cursorColor:
-                          AppColors.primary, // set the cursor color here
+                      cursorColor: AppColors.blue, // set the cursor color here
                       decoration: InputDecoration(
                         prefixIcon: const Icon(
                           Icons.email_outlined,

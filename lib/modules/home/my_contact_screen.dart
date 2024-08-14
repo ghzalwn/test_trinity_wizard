@@ -62,7 +62,7 @@ class _MyContactScreenState extends State<MyContactScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppColors.grey, // border color
+                    color: AppColors.lightGray, // border color
                   ),
                 ),
                 child: Padding(
@@ -76,7 +76,7 @@ class _MyContactScreenState extends State<MyContactScreen> {
                           .loadAllUsers(keyword: val)
                           .whenComplete(() {}); // Replace with the desired ID
                     },
-                    cursorColor: AppColors.primary, // set the cursor color here
+                    cursorColor: AppColors.blue, // set the cursor color here
                     decoration: InputDecoration(
                       suffixIcon: SizedBox(
                         height: 5,

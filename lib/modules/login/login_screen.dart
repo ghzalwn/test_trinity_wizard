@@ -57,14 +57,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppColors.grey, // border color
+                    color: AppColors.darkGray, // border color
                   ),
                 ),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 6.0),
                   child: TextFormField(
                     controller: _userId,
-                    cursorColor: AppColors.primary, // set the cursor color here
+                    cursorColor: AppColors.blue, // set the cursor color here
                     decoration: InputDecoration(
                       prefixIcon: SizedBox(
                         height: 10,
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       hintText: 'Enter User ID',
                       hintStyle: const TextStyle(
-                        color: AppColors.grey,
+                        color: AppColors.darkGray,
                         fontWeight: FontWeight.w400,
                       ),
                       border: InputBorder.none, // hide the default border
