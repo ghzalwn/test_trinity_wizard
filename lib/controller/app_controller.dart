@@ -33,8 +33,6 @@ class AppController extends ChangeNotifier {
     _errorMessage = null;
     notifyListeners();
 
-    log("keyword: $keyword");
-
     try {
       final pref = await SharedPreferences.getInstance();
       var dataListUser = pref.getString("listUser");
@@ -55,18 +53,12 @@ class AppController extends ChangeNotifier {
       }
 
       if (keyword != null && keyword.isNotEmpty) {
-        log("Filtering users with keyword: $keyword");
-
         users = users.where((user) {
           final userFirstName = user.firstName?.trim().toLowerCase() ?? '';
           final filterKeyword = keyword.trim().toLowerCase();
 
-          log('Checking if userFirstName="$userFirstName" contains filterKeyword="$filterKeyword"');
-
           return userFirstName.contains(filterKeyword);
         }).toList();
-
-        log("Number of users after filtering: ${users.length}");
       }
 
       if (dataListUser == null || dataListUser.isEmpty) {}
@@ -81,7 +73,6 @@ class AppController extends ChangeNotifier {
       _headers = dataGrouping.keys.toList()..sort();
       _listUser?.addAll(users);
     } catch (e) {
-      log(e.toString());
       _errorMessage = 'Error: $e';
     } finally {
       _isLoading = false;
@@ -96,7 +87,6 @@ class AppController extends ChangeNotifier {
     try {
       final pref = await SharedPreferences.getInstance();
       var loginId = pref.getString("userId");
-      log(loginId.toString());
 
       if (loginId != null && loginId.isNotEmpty) {
         final user = await _apiService.getUserById(loginId);
